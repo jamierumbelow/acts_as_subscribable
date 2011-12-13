@@ -18,4 +18,5 @@ module ActsAsSubscribable
       
       class_eval "def acts_as_subscribable_options; { :subscriber => '#{options[:subscriber]}', :subscription => '#{options[:subscription]}' }; end"
     end
+  end
 end
