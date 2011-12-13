@@ -10,11 +10,11 @@ module ActsAsSubscribable
       end
 
       def unsubscribe(subscriber)
-        subscriber.subscriptions.where(:todo_id => id).delete_all
+        subscriber.subscriptions.where(:"#{self.name.downcase}_id" => id).delete_all
       end
 
       def subscribed?(subscriber)
-        !subscriptions.where(:user_id => subscriber.id).empty?
+        !subscriptions.where(:"#{acts_as_subscribable_options[:subscriber].downcase}_id" => subscriber.id).empty?
       end
     end
   end
