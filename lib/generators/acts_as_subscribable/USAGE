@@ -1,0 +1,9 @@
+Description:
+    Generate a model and migration to store subscriptions
+
+Example:
+    rails generate acts_as_subscribable Subscription
+
+    This will create:
+        app/models/subscription.rb
+        db/migrations/00000000_create_subscriptions.rb
